@@ -1,0 +1,70 @@
+# Project: Projet1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = common/camera.o common/car.o common/collision.o common/collisionplane.o common/collisionsphere.o common/decor.o common/decorAnime.o common/menu.o common/objloader.o common/particule.o common/skybox.o common/texture.o common/vector.o gameSetup.o main.o
+LINKOBJ  = common/camera.o common/car.o common/collision.o common/collisionplane.o common/collisionsphere.o common/decor.o common/decorAnime.o common/menu.o common/objloader.o common/particule.o common/skybox.o common/texture.o common/vector.o gameSetup.o main.o
+LIBS     = -L"D:/library/Dev-Cpp/MinGW64/lib32" -L"D:/library/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lopengl32 -lGLU32  ../../../../library/freeglut/lib/freeglut.lib -m32
+INCS     = -I"D:/library/Dev-Cpp/MinGW64/include" -I"D:/library/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/library/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/library/Dev-Cpp/MinGW64/include" -I"D:/library/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/library/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/library/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Projet1.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+common/camera.o: common/camera.cpp
+	$(CPP) -c common/camera.cpp -o common/camera.o $(CXXFLAGS)
+
+common/car.o: common/car.cpp
+	$(CPP) -c common/car.cpp -o common/car.o $(CXXFLAGS)
+
+common/collision.o: common/collision.cpp
+	$(CPP) -c common/collision.cpp -o common/collision.o $(CXXFLAGS)
+
+common/collisionplane.o: common/collisionplane.cpp
+	$(CPP) -c common/collisionplane.cpp -o common/collisionplane.o $(CXXFLAGS)
+
+common/collisionsphere.o: common/collisionsphere.cpp
+	$(CPP) -c common/collisionsphere.cpp -o common/collisionsphere.o $(CXXFLAGS)
+
+common/decor.o: common/decor.cpp
+	$(CPP) -c common/decor.cpp -o common/decor.o $(CXXFLAGS)
+
+common/decorAnime.o: common/decorAnime.cpp
+	$(CPP) -c common/decorAnime.cpp -o common/decorAnime.o $(CXXFLAGS)
+
+common/menu.o: common/menu.cpp
+	$(CPP) -c common/menu.cpp -o common/menu.o $(CXXFLAGS)
+
+common/objloader.o: common/objloader.cpp
+	$(CPP) -c common/objloader.cpp -o common/objloader.o $(CXXFLAGS)
+
+common/particule.o: common/particule.cpp
+	$(CPP) -c common/particule.cpp -o common/particule.o $(CXXFLAGS)
+
+common/skybox.o: common/skybox.cpp
+	$(CPP) -c common/skybox.cpp -o common/skybox.o $(CXXFLAGS)
+
+common/texture.o: common/texture.cpp
+	$(CPP) -c common/texture.cpp -o common/texture.o $(CXXFLAGS)
+
+common/vector.o: common/vector.cpp
+	$(CPP) -c common/vector.cpp -o common/vector.o $(CXXFLAGS)
+
+gameSetup.o: gameSetup.cpp
+	$(CPP) -c gameSetup.cpp -o gameSetup.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
